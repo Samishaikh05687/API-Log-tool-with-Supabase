@@ -33,11 +33,11 @@ A powerful developer tool to **log, inspect, and debug API requests** in real ti
 
 ## 📦 Installation
 
-
-git clone https://github.com/your-username/api-logging-tool.git
+```bash
+git clone https://github.com/your-username/api-log-tool-with-supabase.git
 cd api-logging-tool
-npm install bash ```
-
+npm install 
+```
 ---
 
 ## 🔐 Setup Supabase
