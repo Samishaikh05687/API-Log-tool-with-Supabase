@@ -35,7 +35,7 @@ A powerful developer tool to **log, inspect, and debug API requests** in real ti
 
 ```bash
 git clone https://github.com/your-username/api-log-tool-with-supabase.git
-cd api-logging-tool
+cd api-log-tool-with-supabase
 npm install 
 ```
 ---
