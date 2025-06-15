@@ -78,7 +78,8 @@ Create a .env.local file in the root:
 ```bash
 NEXT_PUBLIC_SUPABASE_URL=https://xyzcompany.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-🧠 How It Works
+```
+## 🧠 How It Works
 User logs in via Supabase
 
 They input the API URL, method, headers, and body
@@ -92,8 +93,6 @@ Displayed beautifully
 Logged to Supabase (api_logs table)
 
 Error logs are also captured with status 0
-
-```
 
 ---
 
