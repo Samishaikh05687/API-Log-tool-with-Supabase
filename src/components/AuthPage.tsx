@@ -1,7 +1,33 @@
+"use client";
+
 import React, { useState } from 'react'
-import { Activity, Mail, Lock, User, ArrowLeft, Eye, EyeOff } from 'lucide-react'
+import { Activity, Mail, Lock, ArrowLeft, Eye, EyeOff } from 'lucide-react'
 import { useAuth } from '../contexts/AuthContext'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom' 
+// import { Carousel } from "./ui/carousel";
+
+// const slideData = [
+//     {
+//       title: "Mystic Mountains",
+//       button: "Explore Component",
+//       src: "https://images.unsplash.com/photo-1494806812796-244fe51b774d?q=80&w=3534&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//     {
+//       title: "Urban Dreams",
+//       button: "Explore Component",
+//       src: "https://images.unsplash.com/photo-1518710843675-2540dd79065c?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//     {
+//       title: "Neon Nights",
+//       button: "Explore Component",
+//       src: "https://images.unsplash.com/photo-1590041794748-2d8eb73a571c?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//     {
+//       title: "Desert Whispers",
+//       button: "Explore Component",
+//       src: "https://images.unsplash.com/photo-1679420437432-80cfbf88986c?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   ];
 
 export function AuthPage() {
   const [isSignUp, setIsSignUp] = useState(false)
@@ -46,8 +72,8 @@ export function AuthPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-orange-50 to-orange-100 flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
+    <div className="min-h-screen bg-white flex items-center mx-10 justify-between p-4">
+      <div className="w-full max-w-lg">
         {/* Back Button */}
         <button
           onClick={() => navigate('/')}
@@ -58,19 +84,19 @@ export function AuthPage() {
         </button>
 
         {/* Auth Card */}
-        <div className="bg-white rounded-2xl shadow-2xl p-8 border border-orange-100">
+        <div className="bg-white max-w-6xl p-8 ">
           {/* Header */}
-          <div className="text-center mb-8">
-            <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-              <Activity className="w-8 h-8 text-white" />
+          <div className="text-start mb-8">
+            <div className="w-10  h-10 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+              <Activity className="w-6 h-6 text-white" />
             </div>
-            <h1 className="text-2xl font-bold text-gray-900 mb-2">
-              {isSignUp ? 'Create Account' : 'Welcome Back'}
+            <h1 className="text-4xl max-w-[20rem] font-medium text-gray-900 mb-2">
+              {isSignUp ? 'Create Account' : `Welcome back!  Sign in to continue`}
             </h1>
             <p className="text-gray-600">
               {isSignUp 
                 ? 'Start monitoring your APIs today' 
-                : 'Sign in to your API Logger Pro account'
+                : 'Please enter your data to access your dashboard, Test your APIs, and stay updated with tho latest features.'
               }
             </p>
           </div>
@@ -94,7 +120,7 @@ export function AuthPage() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-0"
                   placeholder="Enter your email"
                   required
                 />
@@ -143,7 +169,25 @@ export function AuthPage() {
                 </div>
               </div>
             )}
-
+            <div className="flex items-center justify-between">
+              <label className="flex items-center gap-2 text-sm text-gray-700">
+                <input
+                  type="checkbox"
+                  className="accent-orange-600 rounded"
+                  // You can add state if you want to handle Remember Me
+                />
+                Remember me
+              </label>
+              {!isSignUp && (
+              <button
+                type="button"
+                className="text-sm text-orange-600 hover:text-orange-700 font-semibold transition-colors"
+                onClick={() => navigate('/auth')}
+              >
+                Forgot password?
+              </button>
+              )}
+            </div>
             <button
               type="submit"
               disabled={loading}
@@ -153,8 +197,14 @@ export function AuthPage() {
             </button>
           </form>
 
+            <div className="flex items-center my-4">
+              <div className="flex-grow border-t border-gray-200" />
+              <span className="mx-4 text-gray-400">or</span>
+              <div className="flex-grow border-t border-gray-200" />
+            </div>
+
           {/* Toggle */}
-          <div className="mt-8 text-center">
+          <div className="mt-5 text-center">
             <p className="text-gray-600">
               {isSignUp ? 'Already have an account?' : "Don't have an account?"}
               <button
@@ -173,22 +223,10 @@ export function AuthPage() {
           </div>
         </div>
 
-        {/* Features */}
-        <div className="mt-8 grid grid-cols-3 gap-4 text-center">
-          <div className="p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-orange-100">
-            <Activity className="w-6 h-6 text-orange-600 mx-auto mb-2" />
-            <p className="text-xs text-gray-600">Real-time Monitoring</p>
-          </div>
-          <div className="p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-orange-100">
-            <User className="w-6 h-6 text-orange-600 mx-auto mb-2" />
-            <p className="text-xs text-gray-600">Team Collaboration</p>
-          </div>
-          <div className="p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-orange-100">
-            <Lock className="w-6 h-6 text-orange-600 mx-auto mb-2" />
-            <p className="text-xs text-gray-600">Secure & Private</p>
-          </div>
-        </div>
       </div>
+      {/* <div className="relative overflow-hidden w-full h-full py-20">
+      <Carousel slides={slideData} />
+    </div> */}
     </div>
   )
 }

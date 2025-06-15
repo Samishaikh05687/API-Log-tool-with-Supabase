@@ -1,4 +1,3 @@
-import React from 'react'
 import { Activity, Shield, BarChart3, Zap, Users, CheckCircle, ArrowRight } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
@@ -40,24 +39,24 @@ export function LandingPage() {
 
   const testimonials = [
     {
-      name: "Sarah Chen",
+      name: "Aman Gupta",
       role: "Senior Developer at TechCorp",
       content: "API Logger Pro has revolutionized how we debug and monitor our APIs. The real-time insights are invaluable."
     },
     {
-      name: "Mike Rodriguez",
+      name: "Nikita Rai",
       role: "DevOps Engineer at StartupXYZ",
       content: "The performance monitoring features helped us identify bottlenecks we never knew existed."
     },
     {
-      name: "Emily Johnson",
+      name: "Naziya Ali",
       role: "Full Stack Developer",
       content: "The mock generation feature saves us hours of development time. Absolutely essential tool."
     }
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-orange-50 to-orange-100">
+    <div className="min-h-screen bg-gradient-to-br from-white via-orange-70 to-orange-100">
       {/* Navigation */}
       <nav className="bg-white/80 backdrop-blur-md border-b border-orange-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,7 +70,7 @@ export function LandingPage() {
                 <p className="text-xs text-orange-600">Professional API Monitoring</p>
               </div>
             </div>
-            
+
             <div className="flex items-center gap-4">
               <button
                 onClick={() => navigate('/auth')}
@@ -99,33 +98,33 @@ export function LandingPage() {
               Now with Real-time Monitoring
             </span>
           </div>
-          
+
           <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
             Monitor & Debug
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-orange-300 to-orange-600">
               Your APIs
             </span>
             Like a Pro
           </h1>
-          
+
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-            The most powerful API logging and debugging tool for modern developers. 
+            The most powerful API logging and debugging tool for modern developers.
             Track, analyze, and optimize your API performance with real-time insights.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
               onClick={() => navigate('/auth')}
-              className="px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-200 shadow-xl hover:shadow-2xl text-lg font-semibold flex items-center gap-2"
+              className="px-8 py-4 bg-gradient-to-r from-orange-500 rounded-full to-orange-600 text-white  hover:from-orange-600 hover:to-orange-700 transition-all duration-200 shadow-xl hover:shadow-2xl text-lg font-semibold flex items-center gap-2"
             >
               Start Free Trial
               <ArrowRight className="w-5 h-5" />
             </button>
-            <button className="px-8 py-4 bg-white text-gray-700 rounded-xl border-2 border-gray-200 hover:border-orange-300 transition-all duration-200 text-lg font-semibold">
+            <button className="px-8 py-4 bg-white text-gray-700 rounded-full border-2 border-gray-200 hover:border-orange-300 transition-all duration-200 text-lg font-semibold">
               Watch Demo
             </button>
           </div>
-          
+
           <div className="mt-16 flex justify-center items-center gap-8 text-sm text-gray-500">
             <div className="flex items-center gap-2">
               <CheckCircle className="w-4 h-4 text-green-500" />
@@ -146,15 +145,21 @@ export function LandingPage() {
       {/* Features Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Everything you need to monitor APIs
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Comprehensive tools for API monitoring, debugging, and optimization
-            </p>
+          <div className="flex mb-16">
+            <div>
+
+                <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                All-in-one platform for effortless API monitoring and debugging
+                </h2>
+
+            </div>
+            <div className=''>
+              <p className="text-xl text-gray-600 text-start max-w-3xl mx-auto"> Comprehensive tools for API monitoring, debugging, and optimization.Dramatically reintermediate effective applications
+                after high-payoff core competence.</p>
+              <button className='border  px-3 rounded-full py-2 mt-6 border-gray-200 hover:border-orange-300 transition-all duration-200'>Learn More</button>
+            </div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <div
@@ -180,14 +185,14 @@ export function LandingPage() {
       <section className="py-24 bg-gradient-to-br from-orange-50 to-orange-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Trusted by developers worldwide
+            <h2 className="text-5xl font-serif text-gray-900 mb-4">
+              Trusted by 250+ developers worldwide
             </h2>
             <p className="text-xl text-gray-600">
               See what our users have to say about API Logger Pro
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <div
@@ -210,7 +215,7 @@ export function LandingPage() {
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-r from-orange-500 to-orange-600">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-white mb-6">
+          <h2 className="text-4xl font-serif text-white mb-6">
             Ready to supercharge your API development?
           </h2>
           <p className="text-xl text-orange-100 mb-8">
@@ -218,7 +223,7 @@ export function LandingPage() {
           </p>
           <button
             onClick={() => navigate('/auth')}
-            className="px-8 py-4 bg-white text-orange-600 rounded-xl hover:bg-gray-50 transition-all duration-200 shadow-xl hover:shadow-2xl text-lg font-semibold"
+            className="px-8 py-4 bg-white text-orange-600 rounded-full hover:scale-105 hover:bg-gray-50 transition-all duration-100 shadow-xl hover:shadow-2xl text-lg font-semibold"
           >
             Start Your Free Trial
           </button>

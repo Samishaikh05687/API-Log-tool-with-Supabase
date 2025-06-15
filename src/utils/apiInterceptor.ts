@@ -1,5 +1,9 @@
 import { APILog } from '../types/api';
 
+import { ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+
 class APIInterceptor {
   private logs: APILog[] = [];
   private listeners: Array<(logs: APILog[]) => void> = [];
@@ -223,5 +227,10 @@ class APIInterceptor {
     return JSON.stringify(collection, null, 2);
   }
 }
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
 
 export const apiInterceptor = new APIInterceptor();
